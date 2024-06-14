@@ -17,7 +17,6 @@ from django.template.context_processors import static
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -25,10 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-neop=6!a8*x+q1r-f6#wd5(mtx^@%ex6y1)5gor6q4xr58!8ka'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -58,8 +56,7 @@ ROOT_URLCONF = 'resumeproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'resumeproject.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -84,28 +80,21 @@ WSGI_APPLICATION = 'resumeproject.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'vercel',
-        'USER': 'default',
-        'PASSWORD': 'NbaW5owdO2nj',
-        'HOST': "ep-purple-dream-a11pura1-pooler.ap-southeast-1.aws.neon.tech",
-        'PORT': '5432',
-    }
-}
-
-POSTGRES_URL="postgres://default:NbaW5owdO2nj@ep-purple-dream-a11pura1-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require"
-POSTGRES_PRISMA_URL="postgres://default:NbaW5owdO2nj@ep-purple-dream-a11pura1-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require&pgbouncer=true&connect_timeout=15"
-POSTGRES_URL_NO_SSL="postgres://default:NbaW5owdO2nj@ep-purple-dream-a11pura1-pooler.ap-southeast-1.aws.neon.tech:5432/verceldb"
-POSTGRES_URL_NON_POOLING="postgres://default:NbaW5owdO2nj@ep-purple-dream-a11pura1.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require"
-POSTGRES_USER=""
-POSTGRES_HOST="ep-purple-dream-a11pura1-pooler.ap-southeast-1.aws.neon.tech"
-POSTGRES_PASSWORD=""
-POSTGRES_DATABASE="verceldb"
-
-
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'tp1',
+#         'USER': 'raj2122002gmailcoms',
+#         'PASSWORD': 'NbaW5owdO2nj',
+#         'HOST': 'ep-purple-dream-a11pura1-pooler.ap-southeast-1.aws.neon.tech',
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'sslmode': 'require',
+#             'options': 'endpoint=ep-replace-this-12345679',
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -125,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -137,13 +125,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = BASE_DIR / 'static',
-STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
